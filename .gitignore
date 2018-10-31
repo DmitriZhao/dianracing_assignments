@@ -1,3 +1,5 @@
+build/
+devel/
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
