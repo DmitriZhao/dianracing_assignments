@@ -10,23 +10,19 @@
 ## Usage
 
         # in the first terminal
-        **roscore**
-        # <Ctrl> + <Shift> + <T>
+        roscore
 
         # in the second terminal
-        **source ./devel/setup.bash**   #or setup.zsh, for zsh
-        **rosrun homework_181029 int_generator**
-        # <Ctrl> + <Shift> + <T>
+        source ./devel/setup.bash   # or setup.zsh, for zsh
+        rosrun homework_181029 int_generator
 
         # in the third terminal
-        **source ./devel/setup.bash**
-        **rosrun homework_181029 int_evaluator**
-        # <Ctrl> + <Shift> + <T>
+        source ./devel/setup.bash
+        rosrun homework_181029 int_evaluator
 
         # in the fourth terminal
-        **source ./devel/setup.bash**
-        **rosrun homework_181029 int_receiver**
-        # <Ctrl> + <Shift> + <T>
+        source ./devel/setup.bash
+        rosrun homework_181029 int_receiver
 
         # in the fifth terminal
-        **rosrun rqt_graph rqt_graph**
+        rosrun rqt_graph rqt_graph
