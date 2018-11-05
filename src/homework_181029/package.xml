@@ -3,7 +3,7 @@
   <name>homework_181029</name>
   <version>0.0.1</version>
   <description>The homework_181029 package</description>
-  <maintainer email="dmitri@tongji.edu.cn">dmitri</maintainer>
+  <maintainer email="lzzhao@tongji.edu.cn">dmitri</maintainer>
   <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>

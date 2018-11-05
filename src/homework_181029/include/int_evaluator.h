@@ -3,17 +3,17 @@
 
 class IntEvaluator
 {
-  public:
-    IntEvaluator();
-    static IntEvaluator * pThis;
+public:
+  IntEvaluator();
 
-  private:
-    ros::NodeHandle n;
-    ros::Subscriber sub = n.subscribe("hw181029_data", 1000, dataReceivingCallback);
-    ros::Publisher pub = n.advertise<std_msgs::Int64>("hw181029_result", 1000);
-    static inline void dataReceivingCallback(const homework_181029::TwoInts::ConstPtr &ints);
-    static inline std_msgs::Int64 evalReceivedData(const homework_181029::TwoInts::ConstPtr &ints);
-    inline void publishResult(std_msgs::Int64);
+private:
+  ros::NodeHandle n;
+  ros::Subscriber sub;
+  ros::Publisher pub = n.advertise<std_msgs::Int64>("hw181029_result", 1000);
+
+  inline void dataReceivingCallback(const homework_181029::TwoInts::ConstPtr &, IntEvaluator *);
+  inline std_msgs::Int64 evalReceivedData(const homework_181029::TwoInts::ConstPtr &);
+  inline void publishResult(std_msgs::Int64);
 };
 
 #endif

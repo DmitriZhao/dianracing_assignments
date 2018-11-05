@@ -3,26 +3,13 @@
 #include "std_msgs/builtin_int64.h"
 #include "int_evaluator.h"
 
-IntEvaluator *IntEvaluator::pThis = NULL;
-
-int main(int argc, char **argv)
-{
-    ros::init(argc, argv, "int_evaluator");
-    IntEvaluator eval;
-    ros::spin();
-    return 0;
-}
-
-
 IntEvaluator::IntEvaluator()
 {
-    pThis = this;
+    this->sub = this->n.subscribe<homework_181029::TwoInts>("hw181029_data", 1000, boost::bind(&IntEvaluator::dataReceivingCallback, this, _1, this));
 }
 
-inline void IntEvaluator::dataReceivingCallback(const homework_181029::TwoInts::ConstPtr &ints)
+inline void IntEvaluator::dataReceivingCallback(const homework_181029::TwoInts::ConstPtr &ints, IntEvaluator *pThis)
 {
-    if (!pThis)
-        return;
     std_msgs::Int64 result = pThis->evalReceivedData(ints);
     pThis->publishResult(result);
 }

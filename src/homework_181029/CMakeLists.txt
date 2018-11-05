@@ -20,7 +20,7 @@ add_executable(int_generator src/int_generator.cc)
 target_link_libraries(int_generator ${catkin_LIBRARIES})
 add_dependencies(int_generator ${catkin_EXPORTED_TARGETS})
 
-add_executable(int_evaluator src/int_evaluator.cc)
+add_executable(int_evaluator src/int_evaluator_main.cc src/int_evaluator.cc)
 target_link_libraries(int_evaluator ${catkin_LIBRARIES})
 add_dependencies(int_evaluator ${catkin_EXPORTED_TARGETS})
 
